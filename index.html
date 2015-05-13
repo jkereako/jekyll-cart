@@ -9,27 +9,32 @@ title: Home
 </header>
 
 <div class="container">
+  <form>
   {% for product in site.data.products %}
 
   {% cycle '<div class="row">', '', '' %}
 
   <div class="col-sm-4">
-    <div class="panel panel-default">
+    <div id="product-{{ product.identifier | slugify }}"class="panel panel-default">
       <div class="panel-body">
         <h3 class="panel-title">{{ product.identifier }}</h3>
         <p>
           {{ product.description }}
         </p>
+        <p>
+          <div class="form-group">
+            <input type="number" class="form-control" id="{{ product.identifier | slugify }}-quantity" placeholder="Quantity">
+          </div>
+        </p>
       </div>
       <div class="panel-footer">
         <div class="btn-group" role="group" aria-label="...">
-          <a class="btn btn-default" href="#">Add to cart</a>
+          <a id="add-{{ product.identifier | slugify }}" class="btn btn-default" href="#">Add to cart</a>
         </div>
       </div>
     </div>
   </div>
-
   {% cycle '', '', '</div>' %}
-
   {% endfor %}
+  </form>
 </div><!-- /.container -->
