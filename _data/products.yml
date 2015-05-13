@@ -1,0 +1,47 @@
+- identifier: S-4964
+  description: EO Container
+  dimensions:	30 x 17 x 17
+  pricing:
+    5: $8.60
+    25: $8.20
+    100+: $7.65
+
+- identifier: S-4681
+  description: Heavy Duty Gaylord
+  dimensions:	36 x 36 x 24
+  pricing:
+    5: $8.60
+    25: $8.20
+    100+: $7.65
+
+- identifier: S-4964
+  description: EO Container
+  dimensions:	30 x 17 x 17
+  pricing:
+    5: $8.60
+    25: $8.20
+    100+: $7.65
+    
+- identifier: S-4964
+  description: EO Container
+  dimensions:	30 x 17 x 17
+  pricing:
+    5: $8.60
+    25: $8.20
+    100+: $7.65
+
+- identifier: S-4681
+  description: Heavy Duty Gaylord
+  dimensions:	36 x 36 x 24
+  pricing:
+    5: $8.60
+    25: $8.20
+    100+: $7.65
+
+- identifier: S-4964
+  description: EO Container
+  dimensions:	30 x 17 x 17
+  pricing:
+    5: $8.60
+    25: $8.20
+    100+: $7.65

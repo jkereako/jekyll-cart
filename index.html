@@ -7,3 +7,29 @@ title: Home
     <a href="{{ page.url }}">{{ page.title | camel_break }}</a>
   </h1>
 </header>
+
+<div class="container">
+  {% for product in site.data.products %}
+
+  {% cycle '<div class="row">', '', '' %}
+
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3 class="panel-title">{{ product.identifier }}</h3>
+        <p>
+          {{ product.description }}
+        </p>
+      </div>
+      <div class="panel-footer">
+        <div class="btn-group" role="group" aria-label="...">
+          <a class="btn btn-default" href="#">Add to cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% cycle '', '', '</div>' %}
+
+  {% endfor %}
+</div><!-- /.container -->
