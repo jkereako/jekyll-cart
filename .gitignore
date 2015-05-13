@@ -1,2 +1,13 @@
+#-- Generic files
+*~
+*.DS_Store
+*.swp
+*.log
+Thumbs.db
+
+#-- Jekyll
 _site/
 .sass-cache/
+
+#-- Bower assets
+assets/vendor
