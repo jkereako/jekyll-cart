@@ -1,0 +1,26 @@
+{
+  "name": "Jekyll cart",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jkereako/jekyll-cart",
+  "authors": [
+    "Jeff Kereakoglow"
+  ],
+  "description": "A simple cart built with Jekyll",
+  "main": "index.html",
+  "keywords": [
+    "jekyll",
+    "cart"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}

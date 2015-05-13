@@ -1,0 +1,10 @@
+#-- Global
+language: en-US
+name: Jekyll cart
+title: Jekyll cart
+description: Simple cart for Jekyll
+timezone: America/New_York
+permalink: /:year/:month/:title/
+
+#-- Styles
+highlighter: pygments
