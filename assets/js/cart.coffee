@@ -10,10 +10,17 @@ class Cart
       .find 'h3.panel-title'
       .text
 
-      @cart.append "<p>#{itemNumber}</p>"
+      listItem = do $ @cart
+      .find 'li:last'
+      .clone
+
+      listItem.text itemNumber
+      @cart.append listItem
+      .hide()
+      .fadeIn 'slow'
 
 
       console.log itemContainer
 
 $ ->
-  cart = new Cart $('form button'), $('div#cart')
+  cart = new Cart $('form button'), $('ul#cart')
