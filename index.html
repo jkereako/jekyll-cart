@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Home
+scripts:
+  - /assets/js/cart.js
 ---
 <header role="heading">
   <h1 class="page-header title hidden-print" itemprop="name">
@@ -9,13 +11,13 @@ title: Home
 </header>
 
 <div class="container">
-  <form>
+  <form action="" autocomplete="off" id="cart" method="post">
   {% for product in site.data.products %}
 
   {% cycle '<div class="row">', '', '' %}
 
   <div class="col-sm-4">
-    <div id="product-{{ product.identifier | slugify }}"class="panel panel-default">
+    <div class="panel panel-default" id="product-{{ product.identifier | slugify }}">
       <div class="panel-body">
         <h3 class="panel-title">{{ product.identifier }}</h3>
         <p>
@@ -29,7 +31,7 @@ title: Home
       </div>
       <div class="panel-footer">
         <div class="btn-group" role="group" aria-label="...">
-          <a id="add-{{ product.identifier | slugify }}" class="btn btn-default" href="#">Add to cart</a>
+          <button aria-pressed="false" autocomplete="off" class="btn btn-primary" data-toggle="button" id="add-{{ product.identifier | slugify }}" type="button">Add to cart</button>
         </div>
       </div>
     </div>
