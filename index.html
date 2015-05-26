@@ -4,39 +4,70 @@ title: Home
 scripts:
   - /assets/js/cart.js
 ---
-<header role="heading">
-  <h1 class="page-header title hidden-print" itemprop="name">
-    <a href="{{ page.url }}">{{ page.title | camel_break }}</a>
-  </h1>
-</header>
-
 <div class="container">
-  <form action="" autocomplete="off" id="cart" method="post">
-  {% for product in site.data.products %}
-
-  {% cycle '<div class="row">', '', '' %}
-
-  <div class="col-sm-4">
-    <div class="panel panel-default" id="product-{{ product.identifier | slugify }}">
-      <div class="panel-body">
-        <h3 class="panel-title">{{ product.identifier }}</h3>
-        <p>
-          {{ product.description }}
-        </p>
-        <p>
-          <div class="form-group">
-            <input type="number" class="form-control" id="{{ product.identifier | slugify }}-quantity" placeholder="Quantity">
-          </div>
-        </p>
-      </div>
-      <div class="panel-footer">
-        <div class="btn-group" role="group" aria-label="...">
-          <button aria-pressed="false" autocomplete="off" class="btn btn-primary" data-toggle="button" id="add-{{ product.identifier | slugify }}" type="button">Add to cart</button>
-        </div>
-      </div>
+  <div class="row" role="header">
+    <div class="col-xs-12">
+      <h1 class="page-header title hidden-print" itemprop="name">
+        <a href="{{ page.url }}">{{ page.title | camel_break }}</a>
+      </h1>
     </div>
   </div>
-  {% cycle '', '', '</div>' %}
-  {% endfor %}
-  </form>
+
+  <div class="row" role="main">
+    <div class="col-md-3">
+      <section>
+        <header>
+          <h3>Cart</h3>
+        </header>
+        <p class="small help-block">
+          Click on a button to add items to the shopping cart.
+        </p>
+        <div id="cart"></div>
+      </section>
+    </div>
+    <div class="col-md-9">
+      <section>
+        <header>
+          <h3>Products</h3>
+        </header>
+        <form action="" autocomplete="off" id="cart-form" method="post">
+        {% for product in site.data.products %}
+
+        {% cycle '<div class="row">', '', '' %}
+
+        <div class="col-sm-4">
+          <div class="panel panel-default" id="product-{{ product.identifier | slugify }}">
+            <div class="panel-body">
+              <h3 class="panel-title">{{ product.identifier }}</h3>
+              <p>
+                {{ product.description }}
+                {% if product.label %}
+                <span class="label label-success">{{ product.label }}</span>
+                {% endif %}
+              </p>
+              <p>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="{{ product.identifier | slugify }}-quantity" placeholder="Quantity">
+                </div>
+              </p>
+            </div>
+            <div class="panel-footer">
+              <div class="btn-group" role="group" aria-label="Add to cart">
+                <button aria-pressed="false" autocomplete="off" class="btn btn-primary" data-toggle="button" id="add-{{ product.identifier | slugify }}" type="button">Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% cycle '', '', '</div>' %}
+        {% endfor %}
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <div class="row" role="footer">
+    <div class="col-xs-12">
+      Footer content
+    </div>
+  </div>
 </div><!-- /.container -->
